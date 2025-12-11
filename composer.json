@@ -1,0 +1,20 @@
+{
+  "name": "ilp/gestor-restaurantes",
+  "description": "Gestor de restaurantes",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "autoload": {
+    "Tools\\": "tools/",
+    "App\\": "src/"
+  },
+
+  "authors": [
+    {
+      "name": "ILangarica",
+      "email": "ignaciolangarica68@gmail.com"
+    }
+  ],
+  "require": {
+    "ext-pdo": "*"
+  }
+}
