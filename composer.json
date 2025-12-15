@@ -4,8 +4,10 @@
   "minimum-stability": "stable",
   "license": "proprietary",
   "autoload": {
-    "Tools\\": "tools/",
-    "App\\": "src/"
+    "psr-4": {
+      "Tools\\": "tools/",
+      "App\\": "src/"
+    }
   },
 
   "authors": [
