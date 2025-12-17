@@ -4,8 +4,13 @@ use App\Categoria;
 
 require_once __DIR__ . '/../vendor/autoload.php';
 
-$categorias = Categoria::todas();
+session_start();
 
+$categorias = Categoria::todas();
+    if (!empty($_SESSION['carrito']))
+    {
+        print_r($_SESSION['carrito']);
+    }
 ?>
 
 <!doctype html>
@@ -22,12 +27,12 @@ $categorias = Categoria::todas();
     <main>
         <ul>
             <?php foreach ($categorias as $categoria): ?>
-                <li><a href="productos.php?cat<?= $categoria['id'] ?>"><?= $categoria['Nombre'] ?></a></li>
+                <li><a href="productos.php?cat=<?= $categoria['Nombre'] ?>&desc=<?= $categoria['Descripcion'] ?>"><?= $categoria['Nombre'] ?></a></li>
             <?php endforeach; ?>
         </ul>
     </main>
     <footer>
-        <p>Usuario:<?php /* $_SESSION('') */ ?> <a href="#">Ver carrito</a> <a href="logout.php">Cerrar sesión</a></p>
+        <p>Usuario:<?php /* $_SESSION('') */ ?> <a href="listaCategorias.php">Home</a> <a href="carrito.php">Ver carrito</a> <a href="logout.php">Cerrar sesión</a></p>
     </footer>
 </body>
 </html>
